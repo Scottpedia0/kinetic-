@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kinetic | Momentum Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              obsidian: '#020617',
+              charcoal: '#0f172a',
+              neon: {
+                blue: '#3b82f6',
+                purple: '#8b5cf6',
+                cyan: '#06b6d4',
+                accent: '#f43f5e',
+                green: '#10b981'
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+              'glitch': 'glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite',
+              'launch': 'launch 0.5s ease-out forwards',
+            },
+            keyframes: {
+              glow: {
+                '0%': { boxShadow: '0 0 5px #3b82f6' },
+                '100%': { boxShadow: '0 0 20px #8b5cf6' },
+              },
+              launch: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              glitch: {
+                '0%': { transform: 'translate(0)' },
+                '20%': { transform: 'translate(-2px, 2px)' },
+                '40%': { transform: 'translate(-2px, -2px)' },
+                '60%': { transform: 'translate(2px, 2px)' },
+                '80%': { transform: 'translate(2px, -2px)' },
+                '100%': { transform: 'translate(0)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #020617;
+        color: #f8fafc;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569; 
+      }
+      
+      /* Markdown Preview Styles */
+      .markdown-preview h1 { font-size: 2em; font-weight: 800; margin-bottom: 0.5em; color: white; }
+      .markdown-preview h2 { font-size: 1.5em; font-weight: 700; margin-top: 1em; margin-bottom: 0.5em; color: white; }
+      .markdown-preview h3 { font-size: 1.25em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; color: #e2e8f0; }
+      .markdown-preview p { margin-bottom: 1em; line-height: 1.6; color: #cbd5e1; }
+      .markdown-preview ul { list-style-type: disc; padding-left: 1.5em; margin-bottom: 1em; color: #cbd5e1; }
+      .markdown-preview ol { list-style-type: decimal; padding-left: 1.5em; margin-bottom: 1em; color: #cbd5e1; }
+      .markdown-preview code { background-color: #1e293b; padding: 0.2em 0.4em; border-radius: 0.25em; font-family: 'JetBrains Mono', monospace; font-size: 0.9em; color: #38bdf8; }
+      .markdown-preview pre { background-color: #1e293b; padding: 1em; border-radius: 0.5em; overflow-x: auto; margin-bottom: 1em; }
+      .markdown-preview pre code { background-color: transparent; padding: 0; color: #e2e8f0; }
+      .markdown-preview blockquote { border-left: 4px solid #3b82f6; padding-left: 1em; color: #94a3b8; font-style: italic; margin-bottom: 1em; }
+      .markdown-preview a { color: #3b82f6; text-decoration: underline; }
+
+      /* Mermaid Styles */
+      .mermaid .node rect, .mermaid .node circle, .mermaid .node ellipse, .mermaid .node polygon, .mermaid .node path {
+        fill: #1e293b !important;
+        stroke: #8b5cf6 !important;
+        stroke-width: 2px !important;
+      }
+      .mermaid .label {
+        color: #e2e8f0 !important;
+        font-family: 'Inter', sans-serif !important;
+      }
+      .mermaid .edgePath .path {
+        stroke: #64748b !important;
+        stroke-width: 2px !important;
+      }
+      .mermaid .marker {
+        fill: #64748b !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "marked": "https://aistudiocdn.com/marked@12.0.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.0.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

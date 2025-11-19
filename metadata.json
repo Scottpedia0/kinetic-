@@ -1,0 +1,7 @@
+{
+  "name": "Kinetic",
+  "description": "An AI-driven momentum engine that breaks vague goals into micro-sprints and proactively drafts work for you to eliminate the friction of starting.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
